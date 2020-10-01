@@ -1,18 +1,18 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import ClientContext from '../../context/clientContext/clientContext'
-import {Client} from './Client'
+import { Client } from './Client'
 import './client-list.css'
 
 export const Clients = () => {
-const { clients } = useContext(ClientContext)
+  const { clients } = useContext(ClientContext)
 
-console.log(clients)
+  console.log(clients)
 
   return (
     <div>
- <div className="card-list">
-    {clients.map(client => <Client key={client.id} name={client.name} email={client.email} phone={client.phone}/>)}
-  </div>
+      <div className="card-list">
+        {clients.map(client => <Client key={client.id} name={client.name} email={client.email} phone={client.phone} />)}
+      </div>
     </div>
   )
 }
