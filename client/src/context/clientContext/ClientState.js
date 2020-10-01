@@ -24,6 +24,12 @@ export const ClientState = (props) => {
         name: 'Heike Cooke',
         phone: '777-999-3333',
         email: 'heike@email.com'
+      },
+      {
+        id: 4,
+        name: 'Blake Heying',
+        phone: '777-099-3033',
+        email: 'Blake@email.com'
       }
     ]
   }
