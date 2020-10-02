@@ -7,29 +7,47 @@ export const Dashboard = () => {
 
 
   const handleClick = (e) => {
-    if (e.currentTarget.value === 'View') {
-      setClicked(true)
-      setAdd(false)
-    } else if (e.currentTarget.value === 'Add') {
-      setAdd(true)
-      setClicked(false)
+    switch (e.currentTarget.value) {
+      case 'View/SearchClients':
+        setClicked(true)
+        setAdd(false)
+        break
+      case 'Add New Client':
+        setAdd(true)
+        setClicked(false)
+        break
+      case 'Go Back':
+        setClicked(false)
+        setAdd(false)
+        break
+      default:
+        setAdd(false)
+        setClicked(false)
     }
   }
 
-
-  return (
-    <Fragment>
-      <div className='container box'>
-        <h1 className='title is-3'>Hi, User!</h1>
-        <div className='container has-text-centered'>
-          <button className='button' value='View' onClick={handleClick}>View/Search Clients</button>
-          {clicked ? <Clients /> : null}
-          <button className='button' value='Add' onClick={handleClick}>Add New Client</button>
-          {add ? <ClientForm /> : null}
-        </div>
+  const buttonChoices = ['View/SearchClients', 'Add New Client', 'Go Back'].map(buttonId => (
+    <button
+      className='button mb-5'
+      key={buttonId}
+      value={buttonId}
+      onClick={handleClick}
+    >
+      {buttonId}
+    </button>
+  ))
+return (
+  <Fragment>
+    <div className='container box'>
+      <h1 className='title is-3'>Hi, User!</h1>
+      <div className='container has-text-centered'>
+      {buttonChoices}
+        {clicked ? <Clients /> : null}
+        {add ? <ClientForm /> : null}
       </div>
-    </Fragment>
-  )
+    </div>
+  </Fragment>
+)
 
 }
 
