@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react'
 import ClientContext from './clientContext'
 import {clientReducer} from './clientReducer'
-import {SHOW_CLIENT} from '../types'
+import {ADD_CLIENT} from '../types'
 
 
 export const ClientState = (props) => {
@@ -9,26 +9,30 @@ export const ClientState = (props) => {
     clients: [
       {
         id: 1,
-        name: 'Jane Doe',
+        firstName: 'Jane',
+        lastName: 'Doe',
         phone: '111-222-3333',
         email: 'dsfsdfa@email.com'
       },
       {
         id: 2,
-        name: 'John Smith',
-        phone: '444-222-5555',
+        firstName: 'Mane',
+        lastName: 'Moe',
+        phone: '111-222-3333',
         email: 'misdfsd@email.com'
       },
       {
         id: 3,
-        name: 'Britney Spears',
-        phone: '777-999-3333',
+        firstName: 'Lane',
+        lastName: 'Loe',
+        phone: '111-222-3333',
         email: 'hdfsdsdfe@email.com'
       },
       {
         id: 4,
-        name: 'Spider Man',
-        phone: '777-099-3033',
+        firstName: 'Hane',
+        lastName: 'Hoe',
+        phone: '111-222-3333',
         email: 'sddsfsdf@email.com'
       }
     ]
@@ -36,16 +40,18 @@ export const ClientState = (props) => {
 
 const [state, dispatch] = useReducer(clientReducer, initialState)
 
-const showClient = () => {
+const addClient = (client) => {
   dispatch({
-    type: SHOW_CLIENT
+    type: ADD_CLIENT,
+    payload: client
   })
 }
 
   return (
     <ClientContext.Provider
     value={{
-      clients: state.clients
+      clients: state.clients,
+      addClient
       }}
     >{props.children}</ClientContext.Provider>
   )

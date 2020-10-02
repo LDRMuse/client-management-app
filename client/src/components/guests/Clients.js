@@ -6,12 +6,18 @@ import './client-list.css'
 export const Clients = () => {
   const { clients } = useContext(ClientContext)
 
-  console.log(clients)
 
   return (
     <div>
       <div className="card-list">
-        {clients.map(client => <Client key={client.id} name={client.name} email={client.email} phone={client.phone} />)}
+        {clients.map(client =>
+        <Client
+        key={client.id}
+        firstName={client.firstName}
+        lastName={client.lastName}
+        email={client.email}
+        phone={client.phone}
+        />)}
       </div>
     </div>
   )

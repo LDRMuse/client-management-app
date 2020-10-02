@@ -1,1 +1,1 @@
-export const SHOW_CLIENT = 'SHOW_CLIENT'
+export const ADD_CLIENT = 'ADD_CLIENT'

@@ -12,13 +12,13 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 // solid, brands, regular are collections of icons ex: "@fortawesome/free-solid-svg-icons";
 library.add(fas, faEdit, faTrash);
 
-export const Client = ({name, email, phone}) => {
+export const Client = ({firstName, lastName, email, phone}) => {
 
 
   return (
     <div className='card-container has-background-danger-light container'>
     <img alt='photo' className='image' src='https://source.unsplash.com/random' />
-        <h1 className='title is-2'>{name}</h1>
+        <h1 className='title is-2'>{firstName}{" "}{lastName}</h1>
         <p>{phone}</p>
         <p>{email}</p>
         <div className=''>

@@ -1,10 +1,12 @@
-import { SHOW_CLIENT } from '../types'
+import { Clients } from '../../components/guests'
+import { ADD_CLIENT } from '../types'
 
 export const clientReducer = (state, { type, payload }) => {
   switch (type) {
-    case SHOW_CLIENT:
+    case ADD_CLIENT:
       return {
-        ...state
+        ...state,
+        clients: [...state.clients, payload]
       }
     default:
       return state
