@@ -9,27 +9,27 @@ export const ClientState = (props) => {
     clients: [
       {
         id: 1,
-        name: 'Melissa Heying',
+        name: 'Jane Doe',
         phone: '111-222-3333',
-        email: 'melissa@email.com'
+        email: 'dsfsdfa@email.com'
       },
       {
         id: 2,
-        name: 'Mike Heying',
+        name: 'John Smith',
         phone: '444-222-5555',
-        email: 'mikey@email.com'
+        email: 'misdfsd@email.com'
       },
       {
         id: 3,
-        name: 'Heike Cooke',
+        name: 'Britney Spears',
         phone: '777-999-3333',
-        email: 'heike@email.com'
+        email: 'hdfsdsdfe@email.com'
       },
       {
         id: 4,
-        name: 'Blake Heying',
+        name: 'Spider Man',
         phone: '777-099-3033',
-        email: 'Blake@email.com'
+        email: 'sddsfsdf@email.com'
       }
     ]
   }
