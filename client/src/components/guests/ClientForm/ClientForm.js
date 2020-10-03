@@ -5,7 +5,6 @@ import ClientContext from '../../../context/clientContext/clientContext';
 
 import '../client-list.css'
 
-//TODO add a client and display on page
 
 export const ClientForm = () => {
   const { addClient } = useContext(ClientContext)
@@ -88,7 +87,6 @@ export const ClientForm = () => {
           />
           <button className="button ml-3 mt-2" type="submit">Add</button>
         </div>
-
       </form>
       </div>
       <ChartEntry />

@@ -23,49 +23,56 @@ export const ChartEntry = () => {
           <input
             className='input'
             type="text"
-            value="Date of Service"
+            placeholder="Date of Service"
+            // value=''
             name="dateOfService"
             onChange=''
           />
           <input
             className='input'
             type="text"
-            value="Type of Service"
+            placeholder="Type of Service"
+            // value=''
             name="typeOfService"
             onChange=''
           />
           <input
             className='input'
             type="text"
-            value="Pigment Brand"
+            placeholder="Pigment Brand"
+            // value=''
             name="pigmentBrand"
             onChange=''
           />
           <input
             className='input'
             type="text"
-            value="Needle/Blade Brand"
+            placeholder="Needle/Blade Brand"
+            // value=''
             name="needleBladeBrand"
             onChange=''
           />
           <input
             className='input'
             type="text"
-            value="Needle/Blade Size"
+            placeholder="Needle/Blade Size"
+            // value=''
             name="needleBladeSize"
             onChange=''
           />
           <input
             className='input'
             type="text"
-            value="Numbing Agent"
+            placeholder="Numbing Agent"
+            // value=''
             name="numbingAgent"
             onChange=''
           />
           <input
             className='input'
             type="text"
-            value="Price of Service"
+            placeholder="Price of Service"
+            // value=''
             name="priceOfService"
             onChange=''
           />
