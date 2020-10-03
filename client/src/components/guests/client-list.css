@@ -5,3 +5,15 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
+
+.inputWidth {
+  max-width: 25vw;
+}
+
+#formBox {
+  background-color: rgb(255, 226, 229);
+}
+
+.button {
+  background-color: rgb(161, 152, 139);
+}

@@ -3,13 +3,15 @@ import React, { Fragment, useContext, useState } from 'react'
 import { ChartEntry } from './ChartEntry'
 import ClientContext from '../../../context/clientContext/clientContext';
 
+import '../client-list.css'
+
 //TODO add a client and display on page
 
 export const ClientForm = () => {
   const { addClient } = useContext(ClientContext)
 
-// 1.this component's state is the user input, we need to set the state
-// the state starts out as empty stings and waits for the user's input
+  // 1.this component's state is the user input, we need to set the state
+  // the state starts out as empty stings and waits for the user's input
   const [client, setClient] = useState({
     firstName: "",
     lastName: "",
@@ -48,19 +50,47 @@ export const ClientForm = () => {
 
   return (
     <Fragment>
-      <form onSubmit={handleSubmit}>
-        <h1 className='title is-3'>Client Form</h1>
-        <input type="text" placeholder="First Name" name="firstName" value={firstName} onChange={handleChange} />
-        <input type="text" placeholder="Last Name" name="lastName" value={lastName} onChange={handleChange} />
-        <input type="text" placeholder="email" name="email" value={email} onChange={handleChange} />
-        <input type="text" placeholder="Phone" name="phone" value={phone} onChange={handleChange} />
-        <button
-          className="button is-primary ml-3 mt-2"
-          type="submit"
-        >
-          Add
-              </button>
+    <div className='box' id='formBox'>
+      <h1 className='title is-3'>Client Form</h1>
+      <form className='field is-grouped is-grouped-centered' onSubmit={handleSubmit}>
+        <div className='inputWidth'>
+          <input
+            type="text"
+            className='input'
+            placeholder="First Name"
+            name="firstName"
+            value={firstName}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            className='input'
+            placeholder="Last Name"
+            name="lastName"
+            value={lastName}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            className='input'
+            placeholder="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            className='input'
+            placeholder="Phone"
+            name="phone"
+            value={phone}
+            onChange={handleChange}
+          />
+          <button className="button ml-3 mt-2" type="submit">Add</button>
+        </div>
+
       </form>
+      </div>
       <ChartEntry />
     </Fragment>
   )
