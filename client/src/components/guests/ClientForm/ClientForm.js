@@ -1,24 +1,25 @@
 import React, { Fragment, useContext, useState } from 'react'
 
 import { ChartEntry } from './ChartEntry'
-import { ClientState } from '../../../context/clientContext/ClientState';
+import ClientContext from '../../../context/clientContext/clientContext';
 
 //TODO add a client and display on page
-// edit guest table?
+
 export const ClientForm = () => {
-  // const { addClient } = useContext(ClientState)
+  const { addClient } = useContext(ClientContext)
 
-
+// 1.this component's state is the user input, we need to set the state
+// the state starts out as empty stings and waits for the user's input
   const [client, setClient] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
   })
-  // this is just destructing client so we can use as the value on the form
+  // 2. this is just destructing state so we don't have to type client.firstName, etc
   const { firstName, lastName, email, phone } = client
 
-  // first we have to set the values in the input
+  // 3. now we have to set state by using the values from the input
   const handleChange = (e) => {
     e.preventDefault()
     setClient({
@@ -30,11 +31,12 @@ export const ClientForm = () => {
     })
   }
 
-  //second, we need to do something with the values
+  // 4. we need to do something with the values
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(client)
-    // set the client back to empty strings
+    // 5. the values of client gets send to ClientState by the addClient function
+    addClient(client)
+    // then set the client back to empty strings after setting the state
     setClient({
       firstName: "",
       lastName: "",
