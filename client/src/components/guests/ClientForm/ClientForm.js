@@ -93,6 +93,7 @@ export const ClientForm = () => {
             onChange={handleChange}
           />
           <button className="button ml-3 mt-2" type="submit">Add</button>
+          <button className='button mt-3 mb-3'>Add Chart Entry</button>
         </div>
       </form>
       </div>

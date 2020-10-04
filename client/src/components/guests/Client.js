@@ -21,6 +21,7 @@ export const Client = ({firstName, lastName, email, phone}) => {
         <h1 className='title is-2'>{firstName}{" "}{lastName}</h1>
         <p>{phone}</p>
         <p>{email}</p>
+        <button className='button mt-3 mb-3'>View/Add Chart Entry</button>
         <div className=''>
         <button>
         <FontAwesomeIcon icon="edit" className="icon"/>
