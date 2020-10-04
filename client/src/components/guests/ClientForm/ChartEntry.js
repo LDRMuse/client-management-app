@@ -4,13 +4,6 @@ import ClientContext from '../../../context/clientContext/clientContext'
 export const ChartEntry = ({client}) => {
   const { addChart } = useContext(ClientContext)
 
-console.log(client, 'this is the client', client)
-
-
-//TODO fix bug for charts; the user cant type in the fields and seems like state gets set right away
-// do i need to assign an id to charts to match client?
-//is my reducer wrong?
-
 
 
   // 1. create state

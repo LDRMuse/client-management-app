@@ -5,6 +5,10 @@ import ClientContext from '../../../context/clientContext/clientContext';
 
 import '../client-list.css'
 
+  //TODO figure out how to add chart notes to client
+  // create conditional button once client is added "add chart notes" that takes you to chart entry component?
+  // Is this how you can connect the notes to the client?
+
 
 export const ClientForm = () => {
   const { addClient } = useContext(ClientContext)
