@@ -42,6 +42,7 @@ export const ClientState = (props) => {
     ]
   }
 
+
 const [state, dispatch] = useReducer(clientReducer, initialState)
 
 const addClient = (client) => {
@@ -53,7 +54,7 @@ const addClient = (client) => {
 const addChart = (client) => {
   dispatch({
     type: ADD_CHART_ENTRY,
-    payload: client.charts
+    payload: client
   })
 }
 

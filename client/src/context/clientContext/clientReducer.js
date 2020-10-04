@@ -10,8 +10,8 @@ export const clientReducer = (state, { type, payload }) => {
     case ADD_CHART_ENTRY:
       return {
         ...state,
-        // take the clients array with with the matching id and add the payload to the chart
-        clients: [...state.clients.id, payload]
+        // update the clients array where the client.id and payload.id matches OR keep client as is
+        clients: state.clients.map(client => client.id === payload.id ? payload : client)
       }
     default:
       return state

@@ -15,7 +15,7 @@ export const ClientForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
+    phone: ""
   })
   // 2. this is just destructing state so we don't have to type client.firstName, etc
   const { firstName, lastName, email, phone } = client
@@ -32,11 +32,18 @@ export const ClientForm = () => {
     })
   }
 
+
   // 4. we need to do something with the values
   const handleSubmit = (e) => {
     e.preventDefault()
     // 5. the values of client gets send to ClientState by the addClient function
-    addClient(client)
+
+    const newClientWithCharts = {
+      ...client,
+      charts: []
+    }
+    addClient(newClientWithCharts)
+
     // then set the client back to empty strings after setting the state
     setClient({
       firstName: "",
@@ -89,7 +96,7 @@ export const ClientForm = () => {
         </div>
       </form>
       </div>
-      <ChartEntry />
+      <ChartEntry client={client}/>
     </Fragment>
   )
 }
