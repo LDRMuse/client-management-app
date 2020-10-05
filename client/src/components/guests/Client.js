@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useHistory} from 'react'
 import './client-card.css'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -13,6 +13,11 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 library.add(fas, faEdit, faTrash);
 
 export const Client = ({firstName, lastName, email, phone}) => {
+
+const goToChart = () {
+  history.push('/chart-entry')
+}
+
 
 
   return (
