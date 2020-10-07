@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useContext } from 'react'
 import ClientContext from '../../../context/clientContext/clientContext'
 
-export const ChartEntry = ({client}) => {
+export const ChartEntry = ({ client }) => {
   const { addChart } = useContext(ClientContext)
 
 
@@ -34,16 +34,18 @@ export const ChartEntry = ({client}) => {
   const handleChange = (e) => {
     e.preventDefault()
     setCharts({
-      ...charts,
-      [e.target.dateOfService]: e.target.value,
-      [e.target.typeOfService]: e.target.value,
-      [e.target.pigmentBrand]: e.target.value,
-      [e.target.colorFormula]: e.target.value,
-      [e.target.needleBladeBrand]: e.target.value,
-      [e.target.needleBladeSize]: e.target.value,
-      [e.target.numbingAgent]: e.target.value,
-      [e.target.priceOfService]: e.target.value,
-      [e.target.additionalNotes]: e.target.value
+      charts: {
+        ...charts,
+        [e.target.dateOfService]: e.target.value,
+        [e.target.typeOfService]: e.target.value,
+        [e.target.pigmentBrand]: e.target.value,
+        [e.target.colorFormula]: e.target.value,
+        [e.target.needleBladeBrand]: e.target.value,
+        [e.target.needleBladeSize]: e.target.value,
+        [e.target.numbingAgent]: e.target.value,
+        [e.target.priceOfService]: e.target.value,
+        [e.target.additionalNotes]: e.target.value
+      }
     })
   }
 
@@ -62,8 +64,10 @@ export const ChartEntry = ({client}) => {
       priceOfService: "",
       additionalNotes: ""
     })
+
   }
 
+  console.log(charts.charts, 'hi')
 
 
   return (
